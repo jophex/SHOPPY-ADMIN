@@ -1,0 +1,170 @@
+#:import sm kivy.uix.screenmanager
+ScreenManager:
+    id: 'manager'
+    transition:sm.FadeTransition(duration=.0)
+    MDScreen:
+        md_bg_color: 245/255, 245/255, 245/255, 1
+        name:"ONE"
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: dp(5), dp(5)
+            MDToolbar:
+                title: "Shoppy Admin"
+                elevation: 10
+
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(5), dp(5)
+
+        Shops:
+            pos_hint:{'center_x': .25, 'center_y':.75}
+
+            MDIcon:
+                icon:"cart-arrow-down"
+                font_size : 48
+                halign:"center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+            MDLabel:
+                text:"ORDERS"
+                bold:True
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+                halign:'center'
+
+
+        Shops:
+            pos_hint:{'center_x': .75, 'center_y':.75}
+
+            MDIcon:
+                icon:"cart"
+                font_size : 48
+                halign:"center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+            MDLabel:
+                text:"PRODUCTS"
+                bold:True
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+                halign:'center'
+
+        Shops:
+            pos_hint:{'center_x': .25, 'center_y':.45}
+
+            MDIcon:
+                icon:"account-multiple-plus"
+                font_size : 48
+                halign:"center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+            MDLabel:
+                text:"FOLLOWERS"
+                bold:True
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+                halign:'center'
+
+
+        Shops:
+            pos_hint:{'center_x': .75, 'center_y': .45}
+
+            MDIcon:
+                icon:"message-reply-text"
+                halign:"center"
+                font_size : 48
+
+
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+            MDLabel:
+                text:"FEEDS"
+                bold:True
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+                halign:'center'
+
+        Shops:
+            pos_hint:{'center_x': .51, 'center_y': .16}
+
+            MDIcon:
+                icon:"chart-bar-stacked"
+                halign:"center"
+                font_size : 48
+                pos_hint:{'center_x':.5, 'center_y': .6}
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+            MDLabel:
+                text:"STATISTICS"
+                bold:True
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+                halign:'center'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Shops@MDCard>:
+    orientation: "vertical"
+    md_bg_color: 1, 1, 1, 1
+    padding: "10dp"
+    #spacing: "5dp"
+    border_radius: 20
+    border_color_a: 0
+    radius: [15]
+    size_hint: .45, .25
+    focus_behavior: False
+    ripple_behavior: True
+    elevation: 0.1
+
+
+
