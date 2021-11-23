@@ -1,6 +1,7 @@
 #:import sm kivy.uix.screenmanager
 ScreenManager:
-    id: 'manager'
+    id: manager
+    name: "manager"
     transition:sm.FadeTransition(duration=.0)
     MDScreen:
         md_bg_color: 245/255, 245/255, 245/255, 1
@@ -8,20 +9,35 @@ ScreenManager:
         MDBoxLayout:
             orientation: 'vertical'
             padding: dp(5), dp(5)
-            MDToolbar:
-                title: "Shoppy Admin"
-                elevation: 10
+
+        MDLabel:
+            text: "SHOPPY ADMIN"
+            markup: True
+            font_size: "25"
+            font_style:'H4'
+            halign: "center"
+            theme_text_color: "Custom"
+            pos_hint:{'center_x': .5, 'center_y':.95}
+            text_color: 83 / 225, 186 / 225, 115 / 225, 1
+            font_name:'images/fonts/Gill Sans.otf'
 
 
-            MDBoxLayout:
-                orientation: 'vertical'
-                padding: dp(5), dp(5)
+        MDLabel:
+            text: 'welcome'+ ' '+app.admin_name
+            halign: "center"
+            theme_text_color: "Custom"
+            pos_hint:{'center_x': .5, 'center_y':.91}
+            text_color: 83 / 225, 186 / 225, 115 / 225, 1
+
+
 
         Shops:
             pos_hint:{'center_x': .25, 'center_y':.75}
+            on_release:
+                manager.current = 'order'
 
-            MDIcon:
-                icon:"cart-arrow-down"
+            MDLabel:
+                text: app.orders
                 font_size : 48
                 halign:"center"
                 theme_text_color: "Custom"
@@ -55,8 +71,8 @@ ScreenManager:
         Shops:
             pos_hint:{'center_x': .25, 'center_y':.45}
 
-            MDIcon:
-                icon:"account-multiple-plus"
+            MDLabel:
+                text: app.followers
                 font_size : 48
                 halign:"center"
                 theme_text_color: "Custom"
@@ -106,6 +122,32 @@ ScreenManager:
                 theme_text_color: "Custom"
                 text_color: 83/225, 186/225, 115/225, 1
                 halign:'center'
+
+    MDScreen:
+        id: order
+        name: "order"
+        on_enter:
+            app.test()
+        MDBoxLayout:
+            orientation:"vertical"
+
+            MDIconButton:
+                icon:'chevron-left'
+                pos_hint:{'center_x':.09, 'center_y': .98}
+                theme_text_color: "Custom"
+                text_color: 83/225, 186/225, 115/225, 1
+                on_release:
+                    manager.current = 'ONE'
+            ScrollView:
+                id:company_scroll
+                MDGridLayout:
+                    cols: 1
+                    adaptive_height: True
+                    padding: dp(6), dp(2)
+                    spacing: dp(30)
+                    id:Orders
+
+
 
 
 
@@ -165,6 +207,24 @@ ScreenManager:
     focus_behavior: False
     ripple_behavior: True
     elevation: 0.1
+
+
+
+
+<Foods>:
+    orientation: "vertical"
+    md_bg_color: 1, 1, 1, 1
+    padding: "15dp"
+    #spacing: "5dp"
+    border_radius: 20
+    border_color_a: 0
+    radius: [15]
+    size_hint: None, None
+    size: app.size_x-12, app.size_y/3
+    focus_behavior: False
+    ripple_behavior: True
+    elevation:.02
+
 
 
 
