@@ -5,7 +5,12 @@ from kivy.uix.image import AsyncImage
 from kivymd.app import MDApp
 from kivymd.uix.card import MDCard
 from kivymd.uix.label import MDLabel
+from kivy import Config
+import os
 
+Config.set('graphics', 'multisamples', '0')
+
+os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 if utils.platform != 'android':
     Window.size = (360, 640)
 
