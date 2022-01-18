@@ -35,10 +35,8 @@ class MainApp(MDApp):
 
     # ------------- MAIN VARIABLES ---------------------#
 
-    admin_name = StringProperty('Joseph')
     orders = StringProperty('')
-    oders2 = NumericProperty(10)
-    followers = StringProperty('389')
+    oders2 = NumericProperty(1)
     times = str(datetime.datetime.now())
     timess = times.split('.')
     products_screen = StringProperty(' ')
@@ -67,7 +65,7 @@ class MainApp(MDApp):
             scroll.add_widget(card)
 
     def product(self):
-        for i in range(10):
+        for i in range(1):
             products = Products(on_release=self.details)
             scroll = self.root.ids.products
 

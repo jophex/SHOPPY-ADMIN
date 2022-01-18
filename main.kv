@@ -10,29 +10,9 @@ ScreenManager:
             orientation: 'vertical'
             padding: dp(5), dp(5)
 
-        MDLabel:
-            text: "SHOPPY ADMIN"
-            markup: True
-            font_size: "25"
-            font_style:'H4'
-            halign: "center"
-            theme_text_color: "Custom"
-            pos_hint:{'center_x': .5, 'center_y':.95}
-            text_color: 83 / 225, 186 / 225, 115 / 225, 1
-            font_name:'images/fonts/Gill Sans.otf'
-
-
-        MDLabel:
-            text: 'welcome'+ ' '+app.admin_name
-            halign: "center"
-            #theme_text_color: "Custom"
-            pos_hint:{'center_x': .5, 'center_y':.91}
-            #text_color: 83 / 225, 186 / 225, 115 / 225, 1
-
-
 
         Shops:
-            pos_hint:{'center_x': .72, 'center_y':.75}
+            pos_hint:{'center_x': .72, 'center_y':.68}
             on_release:
                 manager.current = 'order'
 
@@ -52,7 +32,7 @@ ScreenManager:
 
 
         Shops:
-            pos_hint:{'center_x': .29, 'center_y':.45}
+            pos_hint:{'center_x': .29, 'center_y':.38}
             on_release:
                 manager.current = 'products'
 
@@ -70,24 +50,7 @@ ScreenManager:
                 #text_color: 83/225, 186/225, 115/225, 1
 
         Shops:
-            pos_hint:{'center_x': .72, 'center_y': .45}
-
-            MDLabel:
-                text: app.followers
-                font_size : 48
-                halign:"center"
-                #theme_text_color: "Custom"
-                #text_color: 83/225, 186/225, 115/225, 1
-            MDLabel:
-                text:"FOLLOWERS"
-                bold:True
-                halign: "center"
-                #theme_text_color: "Custom"
-                #text_color: 83/225, 186/225, 115/225, 1
-
-
-        Shops:
-            pos_hint:{'center_x': .51, 'center_y': .16}
+            pos_hint:{'center_x': .72, 'center_y': .38}
 
             MDIcon:
                 icon:"message-reply-text"
@@ -103,7 +66,7 @@ ScreenManager:
                 #text_color: 83/225, 186/225, 115/225, 1
 
         Shops:
-            pos_hint:{'center_x': .29, 'center_y':.75}
+            pos_hint:{'center_x': .29, 'center_y':.68}
 
             MDIcon:
                 icon:"chart-bar-stacked"
